@@ -42,10 +42,11 @@ if(count($matches) == 1) {
     include 'views/search-form.php';
     
     include 'views/matches.php';
-    ?>
     
-    <h1>Current Weather</h1>
-    <p><?= htmlentities($weatherData->main->temp) ?>&deg;F </p>
+    if(isset($weatherData)) {
+        include 'views/weather.php';
+    }
+    ?>
    
 </body>
 </html>
