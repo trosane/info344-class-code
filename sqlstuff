@@ -1,0 +1,6 @@
+A07D9486-9B5C-4E6E-86D7-E3E44DB68C73
+
+CREATE DATABASE zips character set='UTF8';
+create user zipsuser@localhost identified by 'A07D9486-9B5C-4E6E-86D7-E3E44DB68C73';
+GRANT SELECT ON zips.* TO zipsuser@localhost;
+use zips;
