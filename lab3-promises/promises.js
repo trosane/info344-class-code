@@ -1,13 +1,15 @@
 'use strict';
 
 var add2 = function(num) {
-	var promise = new Promise(function(resolve, reject) {
-	resolve(num);
+	return new Promise(function(resolve, reject) {
+		resolve(num);
 	});
+}
 
-	promise.then(function(val) {
+add2(3)
+	.then(function(val) {
 		console.log(val);
-		return val + 1;
+		return add2(val + 1);
 	})
 	.then(function(val) {
 		console.log(val);
@@ -15,6 +17,3 @@ var add2 = function(num) {
 	.catch(function(err) {
 		console.log('you suck');
 	});
-}
-
-add2(3);
